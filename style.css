@@ -1,0 +1,150 @@
+:root {
+  --light-text: #d9dcd6;
+  --bar-background: #16425b;
+  --title-color: #2f6690;
+  --main-text: black;
+  --nav-bar: #3a7ca5
+}
+
+/* Test for saving colors as variables */
+* {
+  color: var(--main-text);
+  background-color: white;
+  margin-left: 0px; 
+  margin-top: 0px;
+  font-size: 24pt;
+}
+
+.content h1 {
+  color: var(--title-color);
+  font-size: 34pt;
+}
+
+
+.content {
+  margin-left: 23.1%;
+  margin-top: 50px;
+  padding-left: 2%;
+  padding-top: 25px;
+}
+
+
+/* Here we save the style for the sidebar */
+.sidebar {
+  background-color: var(--bar-background);
+  width: 23%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  box-shadow: 3px 3px 20px -5px rgba(0, 0, 0, 0.3);
+
+}
+
+.sidebar #name {
+  background-color: var(--bar-background); 
+  color: var(--light-text);
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 20pt;
+  margin-bottom: 0;
+}
+
+.sidebar #info {
+  background-color: var(--bar-background); 
+  color: var(--light-text);
+  font-family: "Playfair Display", serif;
+  font-size: 14pt;
+  font-weight: 500;
+  font-style: normal;
+  margin-top: 0;
+}
+
+.sidebar #text {
+  background-color: var(--bar-background); 
+  color: var(--light-text);
+  font-family: "Playfair Display", serif;
+  font-size: 14pt;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.sidebar p {
+  background-color: var(--bar-background); 
+  color: var(--light-text);
+  font-family: "Playfair Display", serif;
+  font-size: 14pt;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+  width: 80%;
+  right: 50%;
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.topbar {
+  height: 50px;
+  width: 77.5%;
+  margin-left: 23%;
+  margin-top: 0;
+  background-color: var(--title-color);
+  position: fixed;
+  top: 0;
+  padding-left: 2%;
+  border-bottom: 1px solid black;
+}
+
+.topbar .link {
+  color: var(--light-text);
+  background-color: var(--title-color);
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 15pt;
+  padding-top: 12px;
+  padding-right: 50px;
+  text-decoration: none;
+}
+
+.topbar .link:hover {
+  color: white;
+  background-color: var(--title-color);
+  font-size: 15pt;
+  padding-top: 12px;
+  padding-right: 50px;
+}
+
+.topbar #language {
+  padding-left: 25%;
+  text-decoration: underline;
+}
+
+
+
+img {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.info {
+  margin-top: 3px;
+  font-size: 25pt;
+  font-family: sans-serif;
+}
