@@ -1,3 +1,10 @@
+/*
+TODO: 
+- fix dimension on multiple devices
+- fix language position by padding (i need the text to align with the right border)
+*/
+
+/* https://coolors.co/palette/2f6690-3a7ca5-d9dcd6-16425b-81c3d7 */
 :root {
   --light-text: #d9dcd6;
   --bar-background: #16425b;
@@ -6,7 +13,7 @@
   --nav-bar: #3a7ca5
 }
 
-/* Test for saving colors as variables */
+/* Content style options */
 * {
   color: var(--main-text);
   background-color: white;
@@ -17,7 +24,10 @@
 
 .content h1 {
   color: var(--title-color);
-  font-size: 34pt;
+  font-size: 30pt;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 
@@ -26,6 +36,27 @@
   margin-top: 50px;
   padding-left: 2%;
   padding-top: 25px;
+  padding-right: 25px;
+}
+
+.content p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17pt;
+}
+
+.content li {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14pt;
+}
+.li-bald {
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 14pt;
 }
 
 
@@ -93,6 +124,9 @@ hr.solid {
   margin-bottom: 30px;
   margin-top: 30px;
 }
+
+/* Top bar style options */
+
 .topbar {
   height: 50px;
   width: 77.5%;
@@ -126,12 +160,11 @@ hr.solid {
 }
 
 .topbar #language {
-  padding-left: 25%;
+  padding-left: 12%;
   text-decoration: underline;
 }
 
-
-
+/* Image style options */
 img {
   margin-top: 10px;
   margin-bottom: 0px;
@@ -141,10 +174,4 @@ img {
 
 img:hover {
   transform: scale(1.05);
-}
-
-.info {
-  margin-top: 3px;
-  font-size: 25pt;
-  font-family: sans-serif;
 }
