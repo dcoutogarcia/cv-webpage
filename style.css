@@ -1,177 +1,98 @@
 /*
 TODO: 
-- fix dimension on multiple devices
+- fix dimension on multiple devices 
 - fix language position by padding (i need the text to align with the right border)
+- Implement grid
 */
 
 /* https://coolors.co/palette/2f6690-3a7ca5-d9dcd6-16425b-81c3d7 */
 :root {
   --light-text: #d9dcd6;
-  --bar-background: #16425b;
+  --sidebar-background: #16425b;
   --title-color: #2f6690;
   --main-text: black;
-  --nav-bar: #3a7ca5
+  --non-used: #3a7ca5
 }
 
 /* Content style options */
-* {
-  color: var(--main-text);
-  background-color: white;
-  margin-left: 0px; 
-  margin-top: 0px;
-  font-size: 24pt;
+
+#container {
+  width: 99vw;
+  height: 98vh;
+  margin: 0 auto;  
+  outline: 8px solid #4834d4;
+  display: grid;
+  grid-template-columns: 330px auto;
+  /* I have to find a way to make it bigger when the text doesn't fit */
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+  "sidebar topbar"
+  "sidebar content";
 }
 
-.content h1 {
-  color: var(--title-color);
-  font-size: 30pt;
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
 
-
+/* Grid content and child attributes */
 .content {
-  margin-left: 23.1%;
-  margin-top: 50px;
-  padding-left: 2%;
-  padding-top: 25px;
-  padding-right: 25px;
+  grid-area: content;
 }
 
-.content p {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 17pt;
-}
-
-.content li {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14pt;
-}
-.li-bald {
-  font-family: "Lato", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-  font-size: 14pt;
-}
-
-
-/* Here we save the style for the sidebar */
+/* Sidebar attributes*/
 .sidebar {
-  background-color: var(--bar-background);
-  width: 23%;
-  text-align: center;
+  background-color: var(--sidebar-background);
+  background-color: green;
   position: fixed;
-  top: 0;
-  height: 100vh;
   box-shadow: 3px 3px 20px -5px rgba(0, 0, 0, 0.3);
 
-}
-
-.sidebar #name {
-  background-color: var(--bar-background); 
-  color: var(--light-text);
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 20pt;
-  margin-bottom: 0;
-}
-
-.sidebar #info {
-  background-color: var(--bar-background); 
-  color: var(--light-text);
-  font-family: "Playfair Display", serif;
-  font-size: 14pt;
-  font-weight: 500;
-  font-style: normal;
-  margin-top: 0;
-}
-
-.sidebar #text {
-  background-color: var(--bar-background); 
-  color: var(--light-text);
-  font-family: "Playfair Display", serif;
-  font-size: 14pt;
-  font-weight: 400;
-  font-style: normal;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-.sidebar p {
-  background-color: var(--bar-background); 
-  color: var(--light-text);
-  font-family: "Playfair Display", serif;
-  font-size: 14pt;
-  font-weight: 400;
-  font-style: normal;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-/* Solid border */
-hr.solid {
-  border-top: 3px solid #bbb;
-  width: 80%;
-  right: 50%;
-  position: relative;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  grid-area: sidebar;
+  
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
 }
 
 /* Top bar style options */
 
 .topbar {
-  height: 50px;
-  width: 77.5%;
-  margin-left: 23%;
-  margin-top: 0;
   background-color: var(--title-color);
   position: fixed;
   top: 0;
-  padding-left: 2%;
   border-bottom: 1px solid black;
+  grid-area: topbar;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.topbar .link {
-  color: var(--light-text);
-  background-color: var(--title-color);
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 15pt;
-  padding-top: 12px;
-  padding-right: 50px;
-  text-decoration: none;
+
+/* ITEM */
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #222;
+  text-align: center;
+  box-shadow: 1px 2px 3px grey;
+  border-radius: 8px;
+  color: #222;
+  font-size: 2em;
+  font-family: arial, sans-serif;
+  background-color: #f9d423;
+  font-weight: bold;
+  cursor: pointer;
+}
+.item:hover {
+  color: #fff;
 }
 
-.topbar .link:hover {
-  color: white;
-  background-color: var(--title-color);
-  font-size: 15pt;
-  padding-top: 12px;
-  padding-right: 50px;
+.sidebar {
+  grid-area: sidebar
 }
 
-.topbar #language {
-  padding-left: 12%;
-  text-decoration: underline;
+.two {
+  grid-area: topbar
 }
 
-/* Image style options */
-img {
-  margin-top: 10px;
-  margin-bottom: 0px;
-  border-radius: 50%;
-  border: 2px solid black;
-}
-
-img:hover {
-  transform: scale(1.05);
+.three {
+  grid-area: content
 }
