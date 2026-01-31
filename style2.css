@@ -1,3 +1,4 @@
+/* COLORS */
 :root {
   --light-text: #d9dcd6;
   --sidebar-background: #16425b;
@@ -5,8 +6,8 @@
   --main-text: black;
   --non-used: #3a7ca5
 }
-
-*{
+/* Global settings to make the container fill the webpage */
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -17,116 +18,161 @@
   display: grid;  
   width: 100vw;
   height: 100vh;
-  margin: 0 0;  
-  display: grid;
-  grid-template-columns: 330px auto;
-  /* I have to find a way to make it bigger when the text doesn't fit */
+
+  /* Defining the grid areas */
+  grid-template-columns: 360px auto;
   grid-template-rows: 50px auto;
   grid-template-areas:
   "sidebar topbar"
   "sidebar content";
 }
 
-/* ITEM */
-.item {
+/* TOPBAR */
+.topbar {
+  grid-area: topbar;
+  
+  /* Flex settings */
   display: flex;
-  justify-content: center;
+  gap: 20px;
+  justify-content: space-evenly;
   align-items: center;
-  border: 1px solid #222;
   text-align: center;
-  box-shadow: 1px 2px 3px grey;
-  border-radius: 0px;
-  color: #222;
-  font-size: 2em;
+
+  
+  font-size: 16pt;
   font-family: arial, sans-serif;
-  background-color: #f9d423;
   font-weight: bold;
-  cursor: pointer;
-}
-.item:hover {
-  color: #ff123d;
+
+  background-color: var(--title-color);
+  box-shadow: 1px 2px 3px grey;
+  border: 1px solid #222;
+
+  /* Making the bar sticky */
+  position: sticky;
+  top: 0;
 }
 
+  /* Decoration for text */
+  .link {
+    text-decoration: none;
+    color: var(--light-text);
+  }
+
+  .language {
+    text-decoration: underline;
+    color: var(--light-text);
+  }
+
+
+/* SIDEBAR */
 
 .sidebar {
   grid-area: sidebar;
-  background-color: var(--sidebar-background);
+
+  /* Code that makes the sidebar fixed and with
+  correct size */
   position: fixed;
   top: 0;
   height: 100vh;
-  width: 330px;
+  width: 360px;
 
+  box-shadow: 1px 2px 3px grey;
+  border: 1px solid #222;
+  background-color: var(--sidebar-background);
+
+  /* Grid inside sidebar */
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: repeat(2, 2fr 1fr);
 }
 
-.two {
-  grid-area: topbar;
-  background-color: var(--title-color);
-  position: sticky;
-  top: 0;
-}
+  .sidebar p {
+    color: var(--light-text);
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: 100;
+    font-style: normal;
+    padding: 8px 30px;
+  }
 
-.three {
+  /* Styles for my personal info */
+  .sidebar #name {
+    font-weight: 900;
+    font-size: 20pt;
+  }
+  .sidebar #info {
+    font-weight: 500;
+    font-size: 15pt;
+  }
+
+  /* Divider (solid line) */
+  hr.solid {
+    border-top: 3px solid #bbb;
+    width: 80%;
+    right: 50%;
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  /* Styles for photo and hyperlinks */
+  .photo {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+
+  .logos-grid {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .logo {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(3%) saturate(266%) hue-rotate(48deg) brightness(98%) contrast(94%);
+    text-decoration: none;
+  }
+
+  #center-content {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+
+/* MAIN CONTENT */
+
+.main-content {
   grid-area: content;
   background-color: white;
+  margin-left: 15px;
 }
 
+  .main-content h1 {
+    color: var(--title-color);
+    font-size: 30pt;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 
+  .main-content p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17pt;
+  }
 
-/* Solid border */
-hr.solid {
-  border-top: 3px solid #bbb;
-  width: 80%;
-  right: 50%;
-  position: relative;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-.info-texto {
-  color: var(--light-text);
-  font-family: "Playfair Display", serif;
-  font-style: normal;
-  margin-top: 0;
-  text-align: center;
-
-}
-
-.info-text #name {
-  font-size: 14pt;
-  font-weight: 900;
-}
-
-.info-text #info {
-  font-size: 14pt;
-  font-weight: 500;
-}
-
-.info-text #text {
-  font-size: 14pt;
-  font-weight: 500;
-}
-
-.sidebar p {
-  color: var(--light-text);
-  font-family: "Playfair Display", serif;
-  font-size: 14pt;
-  font-weight: 100;
-  font-style: normal;
-}
-
-img {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 50%;
-  border: 2px solid black;
-}
-
-#center-content {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-
+  .main-content li {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14pt;
+  }
+  .li-bald {
+    font-family: "Lato", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 14pt;
+  }
