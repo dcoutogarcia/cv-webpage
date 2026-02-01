@@ -63,6 +63,14 @@
     color: var(--light-text);
   }
 
+  .link:hover {
+    color: white;
+  }
+
+  .language:hover {
+    color: white;
+  }
+
 
 /* SIDEBAR */
 
@@ -118,10 +126,12 @@
 
   /* Styles for photo and hyperlinks */
   .photo {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 5px;
     border-radius: 50%;
     border: 2px solid black;
+    max-width: 200px;
+    max-height: 200px;
   }
 
   .logos-grid {
@@ -132,6 +142,10 @@
   .logo {
     filter: brightness(0) saturate(100%) invert(90%) sepia(3%) saturate(266%) hue-rotate(48deg) brightness(98%) contrast(94%);
     text-decoration: none;
+  }
+
+  .logo:hover {
+    filter: brightness(0) saturate(100%) invert(98%) sepia(6%) saturate(104%) hue-rotate(256deg) brightness(117%) contrast(100%);
   }
 
   #center-content {
@@ -146,7 +160,7 @@
 .main-content {
   grid-area: content;
   background-color: white;
-  margin-left: 15px;
+  margin: 18px;
 }
 
   .main-content h1 {
@@ -176,3 +190,39 @@
     font-style: normal;
     font-size: 14pt;
   }
+
+
+
+/* For phones, we change the grid */
+@media (max-width: 768px) {
+  #container {
+    /* Defining the grid areas */
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "topbar"
+    "sidebar"
+    "content";
+  }
+  .sidebar {
+  position: static;
+  width: 100vw;
+  height: 96vh;
+  border: none;
+  min-height: 650px;
+  }
+
+  .topbar {
+  width: 100vw;
+  flex-wrap: wrap;
+  background-color: var(--sidebar-background);
+  box-shadow: none;
+  border: none;
+  position: static;
+  }
+
+  .link {
+    display: none;
+  }
+
+}
