@@ -161,6 +161,7 @@
   grid-area: content;
   background-color: white;
   margin: 18px;
+  padding-left: 10px;
 }
 
   .main-content h1 {
@@ -169,6 +170,22 @@
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: normal;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .main-content h2 {
+    color: var(--title-color);
+    font-size: 25pt;
+    font-family: "Lato", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .main-content h2::before {
+    content: "- ";
   }
 
   .main-content p {
@@ -176,13 +193,19 @@
     font-weight: 400;
     font-style: normal;
     font-size: 17pt;
+    padding-bottom: 10px;
+    padding-right: 20px;
   }
 
+  .main-content ul {
+    padding-left: 20px;
+  }
   .main-content li {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 14pt;
+    font-size: 17pt;
+    padding-bottom: 5px;
   }
   .li-bald {
     font-family: "Lato", sans-serif;
