@@ -171,7 +171,7 @@
         - Linux (7 years of experience). Advanced terminal usage. 
           Basic knowledge of system administration.
 
-        - Docker (used in my homeserver an in the Astranet), git and Github 
+        - Docker (used in my homeserver and in the Astranet), git and Github 
           (Momentum Magazine).
 
         - LaTeX and Typst (Momentum Magazine, Web-CV).
