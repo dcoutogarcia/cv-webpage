@@ -38,7 +38,6 @@
   align-items: center;
   text-align: center;
 
-  
   font-size: 16pt;
   font-family: arial, sans-serif;
   font-weight: bold;
@@ -70,7 +69,6 @@
   .language:hover {
     color: white;
   }
-
 
 /* SIDEBAR */
 
@@ -154,7 +152,6 @@
     justify-content: center;
   }
 
-
 /* MAIN CONTENT */
 
 .main-content {
@@ -183,7 +180,6 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
-
 
   .main-content p {
     font-family: "Lato", sans-serif;

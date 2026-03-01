@@ -1,6 +1,9 @@
+// We remove the margins to allow the rectangle to occupy the border.
 #set page(margin: 0pt)
 
+// We make a main grid, one column for the blue section and one for the text
 #grid(
+  // Two columns (the blue occupies 35%) and one row
   columns: (35%, auto),
   rows: (100%),
   
@@ -8,22 +11,22 @@
   block(
     fill: rgb("#16425b"),
     height: 100%,
-    inset: 2em,
-    stroke: black,
+    inset: 2em, // Interior margin of the content block 
+    stroke: black, // Border of the content block
     [
-      #set text(fill: rgb("#d9dcd6"),
-                font: "Playfair Display")
+      #set text(fill: rgb("#d9dcd6"), font: "Playfair Display")
 
+      // Inside this sidebar we make another grid to separate the contents
       #grid(columns: (auto),
             align: center,
             gutter: 2em,
 
         // Photo
         figure(
-        block(image("media/diego.jpg", width: 80%),
-          clip: true,
-          radius: 100pt,
-          stroke: black),
+          block(image("media/diego.jpg", width: 80%),
+            clip: true,
+            radius: 100pt,
+            stroke: black),
         ),
 
         // Name
@@ -33,16 +36,16 @@
           Diego Couto García
         ]),
 
-        // links
+        // Links
         block([
-          #rect(height: 0.2em, fill: rgb("#d9dcd6"))
+          #rect(height: 0.2em, fill: rgb("#d9dcd6")) // Rectangular separator
 
           #set text(size: 10pt)
           #set par(leading: 1em)
           #set align(left)
           #box(image("media/location.svg"), height: 1em) Santiago de Compostela 
 
-          #box(image("media/mail.svg"), height: 1em) 
+          #box(image("media/mail.svg"), height: 1em)
           #link("mailto:mail@diegocoutogarcia.com")[mail\@diegocoutogarcia.com]
 
           #box(image("media/web.svg"), height: 1em) 
@@ -66,23 +69,21 @@
           Currenty studying the last year of my Physics degree in
           Santiago de Compostela.
 
-          #rect(height: 0.2em, fill: rgb("#d9dcd6"))
+          #rect(height: 0.2em, fill: rgb("#d9dcd6")) // Rectangular separator
         ]),
 
-        block([ 
+        block([
+          // Function to change the functionality of emph, to change font
+          // weight and italize
           #show emph: it => {
             text(weight: 600, it.body)
           }
           #set par(leading: 1em, spacing: 1.2em)
 
-
-          #emph[Spanish]: native  
-
-          #emph[Galician]: native 
-
-          #emph[English]: fluent (studying a C1) 
-
-          #emph[German]: basic (studying a A2) 
+          #emph[Spanish]: native \
+          #emph[Galician]: native \
+          #emph[English]: fluent (studying a C1) \
+          #emph[German]: basic (studying a A2) \
         ])
       )
     ],
@@ -101,87 +102,80 @@
       #show heading.where(level:2): it => pad(left: 5pt * it.level,
       "- " + it.body)
 
-
-
-
       = About me
 
-      #pad(x: 10pt)[  
-      I'm a Physics student passioned for Computer Sciences. 
-      I've been using Linux daily for the last 7 years, and I'm used 
-      to its inner workings and the use of the terminal.
+        I'm a Physics student passioned for Computer Sciences. I've been
+        tweaking and learning Linux for the past 7 years and I'm skilled on the
+        terminal.
+        
+        I enjoy coding and homelabbing. This webpage it's made and selfhosted
+        my me. I also have multiple services for personal use (ex.
+        #link("https://github.com/Nextcloud")[Nextcloud]), and a forum
+        (#link("https://astranet.clubeastra1.com")[Astranet]).
+        
+        I'm also passionate about other fields, like music. I love learning new
+        things and perfecting skills.
+      
+       = Education
 
-      I enjoy programming and homelabbing. This webpage it's made 
-      and selfhosted my me. I also have multiple services for personal 
-      use (ex. Nextcloud).
+       *Degree in Physics in Universidade de Santiago de Compostela* (September
+       2021-Present)
 
-      I'm also passionate about other fields, like music. I love learning new
-      things and perfecting my skills.]
+       - Doing Bachelors Thesis on simulation of the fluids on the inner ear
+         for vertigo treatment
+
+       - Simulated the dynamics of noble gases in Fortran
+
+      = Experience
+
+      Internship in Eptisa A Coruña (June 2025 - July 2025)
+      
+      - Automated vehicle routing for garbage processing using machine learning
+        algorithms
+
+      - Collected data in field using QField and processed it using QGIS for
+        training models
 
       = Projects
 
-      #pad(x: 10pt)[  
-      - #link("https://astranet.clubeastra1.com")[Astranet]: forum 
-        for the community of a Philosophy club. Built on 
-        #link("https://discourse.org")[Discourse] (using Docker) and 
-        hosted on a personal computer using Cloudflare.
+      #link("https://astranet.clubeastra1.com")[*Astranet*] (November 2025 -
+      Present)
+      - Forum for the community of a Philosophy club
+      - Built on #link("https://discourse.org")[Discourse] (using Docker)
+      - Hosted on a personal computer using Cloudflare
 
-      - #link("https://github.com/dcoutogarcia/cv-webpage")[CV-Webpage]: this 
-        webpage. Thought as a project to learn web design, HTML, CSS and Typst.
-
-      - #link("https://github.com/fisicaUSC/revista")[Momentum Magazine]: 
-        faculty's magazine (Física USC). Editing articles in LaTeX.]
-
-      = Education
-
-        == University
-          
-          #pad(x: 20pt)[  
-          - Degree in Physics in Universidade de Santiago de 
-            Compostela (2021-2026). (Currently finishing my 
-            Undergraduate Thesis).
-          
-          - Undergraduate Thesis: Study of the dynamics of cavities 
-            similar to the utricle in diagnostic manouvers in 
-            otorhinolaryngology. Simulations of the Inner Ear in Star-CCM+.]
+      #link("https://github.com/dcoutogarcia/cv-webpage")[*CV-Webpage*]
+      (January 2026 - Present)
+      - Built for learning the basics of HTML, CSS and web design
+      - Selfhosted on a Raspberry Pi using Cloudflare 
 
 
-        == Languages
-
-          #pad(x: 20pt)[  
-          - _Spanish_: native.
-          - _Galician_: native.
-          - _English_: currently preparing the title C1 in Cambridge.
-          - _German_: currently studying a A2 course.]
-
-        == Courses
-          #pad(x: 20pt)[  
-          - Quantum Computing (Feb-Mar 2025). 5th place in the HaQaton.
-          - LaTeX Course (March 2022).
-          - A1 German Course (2025) in the Escola de Linguas Modernas, USC.]
-
-      = Experience
-        #pad(x: 10pt)[  
-        - Internship in Eptisa A Coruña (Jun-Jul 2025).
-          Route Optimization for Garbage Trucks using Machine 
-          Learning algorithms. Coordination of the Project.]
+      #link("https://github.com/fisicaUSC/revista")[*Momentum Magazine*]
+      (September 2025 - Present):
+      - Faculty's magazine, made by the students
+      - Working on editing articles and formatting in Latex
 
       = Skills
-        #pad(x: 10pt)[  
-        - Linux (7 years of experience). Advanced terminal usage. 
-          Basic knowledge of system administration.
 
-        - Docker (used in my homeserver and in the Astranet), git and Github 
-          (Momentum Magazine).
+      *Programming Languages*: Python (Pandas, Numpy, SciKitLearn...), Fortran,
+      Bash
 
-        - LaTeX and Typst (Momentum Magazine, Web-CV).
+      *Software*: Star-CCM+, Docker, Git, LaTeX, QGIS
 
-        - Office and Excel.
+      = Languages
+      *Spanish*: native \ 
+      *Galician*: native \ 
+      *English*: currently preparing the title C1 in Cambridge \ 
+      *German*: currently studying a A2 course \ 
 
-        - Advanced knowledge of Python. Data Analysis, Machine Learning.
+      = Courses
 
-        - Experience in Fortran coding simulations.
+      *Introduction to Quantum Computing* (February 2025 - March 2025)
+      - 5th place in the HaQaton by implementing Quantum Machine Learning
+        algorithms using Qiskit
 
-        - Experience on fluid simulation in Star-CCM+.]
+      *A1 German Course (2025)*
+      - Coursed in the Escola de Linguas Modernas, USC
+
   ])
 )

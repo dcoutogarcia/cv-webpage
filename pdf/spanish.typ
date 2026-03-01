@@ -1,6 +1,9 @@
+// We remove the margins to allow the rectangle to occupy the border.
 #set page(margin: 0pt)
 
+// We make a main grid, one column for the blue section and one for the text
 #grid(
+  // Two columns (the blue occupies 35%) and one row
   columns: (35%, auto),
   rows: (100%),
   
@@ -8,22 +11,21 @@
   block(
     fill: rgb("#16425b"),
     height: 100%,
-    inset: 2em,
-    stroke: black,
+    inset: 2em, // Interior margin of the content block 
+    stroke: black, // Border of the content block
     [
-      #set text(fill: rgb("#d9dcd6"),
-                font: "Playfair Display")
-
+      #set text(fill: rgb("#d9dcd6"), font: "Playfair Display")
+      // Inside this sidebar we make another grid to separate the contents
       #grid(columns: (auto),
             align: center,
             gutter: 2em,
 
         // Photo
         figure(
-        block(image("media/diego.jpg", width: 80%),
-          clip: true,
-          radius: 100pt,
-          stroke: black),
+          block(image("media/diego.jpg", width: 80%),
+            clip: true,
+            radius: 100pt,
+            stroke: black),
         ),
 
         // Name
@@ -33,13 +35,14 @@
           Diego Couto García
         ]),
 
-        // links
+        // Links
         block([
-          #rect(height: 0.2em, fill: rgb("#d9dcd6"))
+          #rect(height: 0.2em, fill: rgb("#d9dcd6")) // Rectangular separator
 
           #set text(size: 10pt)
           #set par(leading: 1em)
           #set align(left)
+
           #box(image("media/location.svg"), height: 1em) Santiago de Compostela 
 
           #box(image("media/mail.svg"), height: 1em) 
@@ -55,6 +58,7 @@
           #link("https://linkedin.com")[Diego Couto García]
         ]),
 
+        // Description
         block([
           #set text(size: 10pt)
           #set par(leading: 1em, spacing: 2em)
@@ -66,23 +70,21 @@
           Actualmente estoy terminando el Grado en Física de la Universidad
           Santiago de Compostela.
 
-          #rect(height: 0.2em, fill: rgb("#d9dcd6"))
+          #rect(height: 0.2em, fill: rgb("#d9dcd6")) // Rectangular separator
         ]),
 
         block([ 
+          // Function to change the functionality of emph, to change font
+          // weight and italize
           #show emph: it => {
             text(weight: 600, it.body)
           }
           #set par(leading: 1em, spacing: 1.2em)
 
-
-          #emph[Español]: nativo
-
-          #emph[Gallego]: nativo
-
-          #emph[Inglés]: fluído (estudiando C1) 
-
-          #emph[Alemán]: básico (estudiando A2) 
+          #emph[Español]: nativo \ 
+          #emph[Gallego]: nativo \ 
+          #emph[Inglés]: fluído (estudiando C1) \ 
+          #emph[Alemán]: básico (estudiando A2) \ 
         ])
       )
     ],
@@ -101,12 +103,8 @@
       #show heading.where(level:2): it => pad(left: 5pt * it.level,
       "- " + it.body)
 
-
-
-
       = Sobre mí
 
-      #pad(x: 10pt)[ 
       Soy un estudiante de física apasionado por la informática.
       Llevo 7 años utilizando Linux de forma diaria y estoy muy familiarizado
       con su funcionamiento y con el uso de la terminal.
@@ -117,77 +115,65 @@
 
       Tengo también interés en otros campos, como puede ser la música. Pero en
       general disfruto mucho de aprender cosas nuevas y adquirir nuevas
-      habilidades.]
-
-      = Proyectos
-
-      #pad(x: 10pt)[  
-      - #link("https://astranet.clubeastra1.com")[Astranet]: foro
-        para la comunidad de un club de filosofía. Construído con 
-        #link("https://discourse.org")[Discourse] (using Docker) y
-        hosteado en un ordenador personal utilizando Cloudflare.
-
-      - #link("https://github.com/dcoutogarcia/cv-webpage")[CV-Webpage]: esta
-        página web. Concebida como proyecto para aprender diseño, HTML, CSS y
-        Typst.
- 
-
-      - #link("https://github.com/fisicaUSC/revista")[Revista Momentum]:
-        revista de la facultad de Física de USC. Edición y mantenimiento del
-        código de LaTeX.]
+      habilidades.
 
       = Educación
 
-        == Universidad
-          
-          #pad(x: 20pt)[ 
-          - Grado en Física por la Universidade de Santiago de Compostela 
-            (2021-2026). (Actualmente terminando mi trabajo de fin de grado). 
+      *Grado en Física en la Universidade de Santiago de Compostela* (Septiembre
+      2021 - Actualidad)
+      
+      - Escribiendo el TFG en la simulación del fluido del oído interno para el
+        tratamiento de vertigo 
 
-          - Trabajo de Fin de Grado: Estudio de la dinámica de cavidades
-            similares al utrículo frente a maniobras de diagnóstico en
-            otorrinolaringología. Simulaciones del fluído del oído interno en
-            Star-CCM+]
- 
-
-        == Idiomas
-
-          #pad(x: 20pt)[  
-          - _Español_: nativo.
-          - _Gallego_: nativo.
-          - _Inglés_: actualmente preparando un C1 de Cambridge.
-          - _Alemán_: actualmente estudiando un curso A2.]
-
-        == Cursos
-          #pad(x: 20pt)[  
-          - Computación cuántica (Feb-Mar 2025). 5º puesto en el HaQaton.
-          - Curso de LaTeX (Marzo 2022).
-          - Curso A1 de Alemán (2025). Escola de Linguas Modernas, USC.]
+      - Realizadas simulaciones de la dinámica de gases
+        nobles en Fortran
 
       = Experiencia
-      #pad(x: 10pt)[  
-      - Prácticas curriculares en Eptisa A Coruña (Jun-Jul 2025). Creación de
-        un programa de automatización de rutas para recogida de basura
-        utlizando algortimos de Machine Learning. Coordinación del proyecto.]
+
+      *Prácticas en Eptisa A Coruña* (Junio 2025 - Jul 2025)
+
+      - Automaticé el enrutamimento de vehículos de gestión de residuos
+        utilizando algortimos de Machine Learning
+      
+      - Recogí datos en campo utilizando QField y los procesé utilizando QGIS
+
+      = Proyectos
+
+      #link("https://astranet.clubeastra1.com")[*Astranet*] (Noviembre 2025 -
+      Actualidad)
+
+      - Foro creado para la comunidad de un club de filosofía
+      - Construído con Discourse (utilizando Docker)
+      - Hosteado en un ordenador personal utilizando Cloudflare
+
+      #link("https://github.com/dcoutogarcia/cv-webpage")[*CV-Webpage*] (Enero
+      2026 - Actualidad)
+
+      - Construído para aprender las bases de HTML, CSS y el diseño web.
+      - Hosteado en una Raspberry Pi utilizando Cloudflare
+
+      #link("https://github.com/fisicaUSC/revista")[*Revista Momentum*]
+      (Septiembre 2025 - Actualidad)
+
+      - Revista de la Facultad de Física de la USC. Creada y mantenida por
+        estudiantes
+      - Edición de artículos y mantenimiento del código en LaTeX
 
       = Habilidades
-        #pad(x: 10pt)[  
+ 
+      *Lenguajes de programación*: Python (Pandas, Numpy, SciKitLearn...),
+      Fortran, Bash
 
-        - Linux (7 años de experiencia). Uso avanzado de la terminal.
-          Conocimiento básico de administración de sistemas. 
+      *Software*: Star-CCM+, Docker, Git, LaTeX, QGIS
 
-        - Docker (utlizado en mi homeserver y la Astranet), git y uso de Github
-          (revista Momentum). 
+      = Cursos
 
-        - LaTeX y Typst (revista Momentum y CV en pdf).
+      *Introducción a la Computación Cuántica* (Febrero 2025 - Marzo 2025)
+     - 5º puesto en el HaQathon por la implementación de algoritmos de Quantum
+       Machine Learning utilizando Qiskit
 
-        - Ofimática y uso de Excel.
-
-        - Conocimiento avanzado de Python. Análisis de datos, machine learning.
-
-        - Experiencia en Fortran programando simulaciones.
-
-        - Experiencia en simulación de Fluídos en Star-CCM+.]
+     *Curso A1 de Alemán* (2025)
+     - Cursado en la Escola de Linguas Modernas, USC
 
   ])
 )
