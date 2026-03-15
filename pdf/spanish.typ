@@ -55,7 +55,7 @@
           #link("https://github.com/dcoutogarcia")[dcoutogarcia]
 
           #box(image("media/linkedin.svg"), height: 1em)
-          #link("https://linkedin.com")[Diego Couto García]
+          #link("https://linkedin.com/in/diego-couto-garcía-6a99503b7/")[Diego Couto García]
         ]),
 
         // Description
@@ -119,27 +119,27 @@
 
       = Educación
 
-      *Grado en Física en la Universidade de Santiago de Compostela* (Septiembre
-      2021 - Actualidad)
+      *Grado en Física en la Universidade de Santiago de Compostela* \
+      (Septiembre 2021 -- Actualidad)
       
-      - Escribiendo el TFG en la simulación del fluido del oído interno para el
-        tratamiento de vertigo 
+      - Escribiendo el TFG en la simulación del fluido del oído \
+        interno para el tratamiento de vertigo
 
       - Realizadas simulaciones de la dinámica de gases
         nobles en Fortran
 
       = Experiencia
 
-      *Prácticas en Eptisa A Coruña* (Junio 2025 - Jul 2025)
+      *Prácticas en Eptisa A Coruña* (Junio 2025 -- Julio 2025)
 
-      - Automaticé el enrutamimento de vehículos de gestión de residuos
-        utilizando algortimos de Machine Learning
+      - Automaticé el enrutamimento de vehículos de gestión de \
+        residuos utilizando algortimos de Machine Learning
       
       - Recogí datos en campo utilizando QField y los procesé utilizando QGIS
 
       = Proyectos
 
-      #link("https://astranet.clubeastra1.com")[*Astranet*] (Noviembre 2025 -
+      #link("https://astranet.clubeastra1.com")[*Astranet*] (Noviembre 2025 --
       Actualidad)
 
       - Foro creado para la comunidad de un club de filosofía
@@ -147,30 +147,34 @@
       - Hosteado en un ordenador personal utilizando Cloudflare
 
       #link("https://github.com/dcoutogarcia/cv-webpage")[*CV-Webpage*] (Enero
-      2026 - Actualidad)
+      2026 -- Actualidad)
 
-      - Construído para aprender las bases de HTML, CSS y el diseño web.
+      - Construído para aprender las bases de HTML, CSS y el diseño web
       - Hosteado en una Raspberry Pi utilizando Cloudflare
 
       #link("https://github.com/fisicaUSC/revista")[*Revista Momentum*]
-      (Septiembre 2025 - Actualidad)
+      (Septiembre 2025 -- Actualidad)
 
-      - Revista de la Facultad de Física de la USC. Creada y mantenida por
-        estudiantes
+      - Revista de la Facultad de Física de la USC. Hosteada en GitHub
       - Edición de artículos y mantenimiento del código en LaTeX
+
+      #link("https://github.com/dcoutogarcia/mca-tools")[*MCA-tools*]
+      (Marzo 2026 -- Actualidad)
+      - Herramientas de análisis de datos para simplificar la espectroscopía \
+        gamma con Analizadores Multicanal (MCA)
+      - Escrito en Python y hosteado en Github
 
       = Habilidades
  
-      *Lenguajes de programación*: Python (Pandas, Numpy, SciKitLearn...),
-      Fortran, Bash
+      *Lenguajes de programación*: Python, Fortran, Bash Scripting
 
       *Software*: Star-CCM+, Docker, Git, LaTeX, QGIS
 
       = Cursos
 
-      *Introducción a la Computación Cuántica* (Febrero 2025 - Marzo 2025)
-     - 5º puesto en el HaQathon por la implementación de algoritmos de Quantum
-       Machine Learning utilizando Qiskit
+      *Introducción a la Computación Cuántica* (Febrero 2025 -- Marzo 2025)
+     - 5º puesto en el HaQathon por la implementación de algoritmos \
+        de Quantum Machine Learning utilizando Qiskit
 
      *Curso A1 de Alemán* (2025)
      - Cursado en la Escola de Linguas Modernas, USC

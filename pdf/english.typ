@@ -1,5 +1,6 @@
 // We remove the margins to allow the rectangle to occupy the border.
 #set page(margin: 0pt)
+#show heading: set par(leading: 0.65em)
 
 // We make a main grid, one column for the blue section and one for the text
 #grid(
@@ -55,19 +56,18 @@
           #link("https://github.com/dcoutogarcia")[dcoutogarcia]
 
           #box(image("media/linkedin.svg"), height: 1em)
-          #link("https://linkedin.com")[Diego Couto García]
+          #link("https://linkedin.com/in/diego-couto-garcía-6a99503b7")[Diego Couto García]
         ]),
 
         block([
           #set text(size: 10pt)
-          #set par(leading: 1em, spacing: 2em)
 
           #rect(height: 0.2em, fill: rgb("#d9dcd6"))
           I'm a physicist interested in computer 
           sciences, linux, open source and homelabbing.
 
-          Currenty studying the last year of my Physics degree in
-          Santiago de Compostela.
+          Currenty studying the last year of my Bachelor's Degree in Physics
+          in Santiago de Compostela.
 
           #rect(height: 0.2em, fill: rgb("#d9dcd6")) // Rectangular separator
         ]),
@@ -78,7 +78,6 @@
           #show emph: it => {
             text(weight: 600, it.body)
           }
-          #set par(leading: 1em, spacing: 1.2em)
 
           #emph[Spanish]: native \
           #emph[Galician]: native \
@@ -98,9 +97,6 @@
       #show heading.where(level: 2): set text(size: 10pt)
       #set text(font: "Lato", size: 10pt)
       #show link: underline
-      
-      #show heading.where(level:2): it => pad(left: 5pt * it.level,
-      "- " + it.body)
 
       = About me
 
@@ -118,47 +114,49 @@
       
        = Education
 
-       *Degree in Physics in Universidade de Santiago de Compostela* (September
-       2021-Present)
+       *Bachelor's Degree in Physics in Universidade de Santiago de
+       Compostela* (September 2021 -- Present)
 
-       - Doing Bachelors Thesis on simulation of the fluids on the inner ear
-         for vertigo treatment
+       - Doing Bachelor's Thesis on simulation of the fluids on the \
+         inner ear for vertigo treatment
 
        - Simulated the dynamics of noble gases in Fortran
 
       = Experience
 
-      Internship in Eptisa A Coruña (June 2025 - July 2025)
+      Internship in Eptisa A Coruña (June 2025 -- July 2025)
       
       - Automated vehicle routing for garbage processing using machine learning
-        algorithms
 
-      - Collected data in field using QField and processed it using QGIS for
-        training models
+      - Collected data in field using QField and processed it using QGIS
 
       = Projects
 
-      #link("https://astranet.clubeastra1.com")[*Astranet*] (November 2025 -
-      Present)
+      #link("https://astranet.clubeastra1.com")[*Astranet*]
+      (November 2025 -- Present)
       - Forum for the community of a Philosophy club
       - Built on #link("https://discourse.org")[Discourse] (using Docker)
       - Hosted on a personal computer using Cloudflare
 
       #link("https://github.com/dcoutogarcia/cv-webpage")[*CV-Webpage*]
-      (January 2026 - Present)
+      (January 2026 -- Present)
       - Built for learning the basics of HTML, CSS and web design
       - Selfhosted on a Raspberry Pi using Cloudflare 
 
-
       #link("https://github.com/fisicaUSC/revista")[*Momentum Magazine*]
-      (September 2025 - Present):
+      (September 2025 -- Present):
       - Faculty's magazine, made by the students
       - Working on editing articles and formatting in Latex
 
+      #link("https://github.com/dcoutogarcia/mca-tools")[*MCA-tools*]
+      (March 2026 -- Present):
+      - Data analysis tools to simplify gamma spectroscopy \
+        with multichannel analyzer
+      - Written in Python and hosted in GitHub
+
       = Skills
 
-      *Programming Languages*: Python (Pandas, Numpy, SciKitLearn...), Fortran,
-      Bash
+      *Programming Languages*: Python, Fortran, Bash Scripting
 
       *Software*: Star-CCM+, Docker, Git, LaTeX, QGIS
 
@@ -170,9 +168,9 @@
 
       = Courses
 
-      *Introduction to Quantum Computing* (February 2025 - March 2025)
-      - 5th place in the HaQaton by implementing Quantum Machine Learning
-        algorithms using Qiskit
+      *Introduction to Quantum Computing* (February 2025 -- March 2025)
+      - 5th place in the HaQaton by implementing Quantum Machine \
+        Learning algorithms using Qiskit
 
       *A1 German Course (2025)*
       - Coursed in the Escola de Linguas Modernas, USC

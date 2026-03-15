@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 WORK_DIR="$(pwd)"
 PDF_DIR="$WORK_DIR/pdf"

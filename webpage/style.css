@@ -213,7 +213,7 @@
 
   .main-content a {
     color: black;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   .main-content a:hover {
